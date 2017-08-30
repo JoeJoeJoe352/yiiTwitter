@@ -117,7 +117,7 @@ class UserController extends Controller {
         $model = $this->findModel($id);
         //url átírás elleni védelem
         if (!$this->isOwner($id)) {
-            return $this->render('..\site\error', ['name' => "Hozzáférés megtagadva",
+            return $this->render('../site/error', ['name' => "Hozzáférés megtagadva",
                         'message' => 'Nincs jogosultságod ennek a felhasználónak az adatainak a szerkesztéséhez']);
         }
 
@@ -145,7 +145,7 @@ class UserController extends Controller {
         $user = $provider->getModels();
         //url átírás elleni védelem
         if ($user == null) {
-            return $this->render('..\site\error', ['name' => "nincs ilyen tweet",
+            return $this->render('../site/error', ['name' => "nincs ilyen tweet",
                         'message' => 'Nincs ilyen felhasználónév']);
         }
         //Tweetek lekérése
@@ -175,7 +175,7 @@ class UserController extends Controller {
     public function actionDelete($id) {
         //url átírás elleni védelem
         if (!$this->isOwner($id)) {
-            return $this->render('..\site\error', ['name' => "Hozzáférés megtagadva",
+            return $this->render('../site/error', ['name' => "Hozzáférés megtagadva",
                         'message' => 'Nincs jogosultságod ennek a felhasználónak a törléséhez']);
         }
         //Userhez köthető tweetek lekérése

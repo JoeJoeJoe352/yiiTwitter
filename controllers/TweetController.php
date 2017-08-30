@@ -99,7 +99,7 @@ class TweetController extends Controller {
         $model = $this->findModel($id);
         $isOwner = $this->isOwner($model->getUserId());
         if (!$isOwner) {
-            return $this->render('..\site\error', ['name' => "Hozzáférés megtagadva",
+            return $this->render('../site/error', ['name' => "Hozzáférés megtagadva",
                         'message' => 'Nincs jogosultságod ennek a Tweetnek a módosításához']);
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -121,7 +121,7 @@ class TweetController extends Controller {
         $model = $this->findModel($id);
         $isOwner = $this->isOwner($model->getUserId());
         if (!$isOwner) {
-            return $this->render('..\site\error', ['name' => "Hozzáférés megtagadva",
+            return $this->render('../site/error', ['name' => "Hozzáférés megtagadva",
                         'message' => 'Nincs jogosultságod ennek a Tweetnek a törléséhez']);
         }
         $this->findModel($id)->delete();
